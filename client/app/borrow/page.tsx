@@ -15,8 +15,8 @@ import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 export default function Borrow() {
-  const [poolsData, setPoolsData] = useState([]);
-  const [poolsAddresses, setPoolsAddresses] = useState([]);
+  const [poolsData, setPoolsData] = useState<string[]>([]);
+  const [poolsAddresses, setPoolsAddresses] = useState<unknown[]>([]);
   const [poolClickData, setPoolClickData] = useState({
     asset: "",
     tokens: [],
@@ -33,7 +33,7 @@ export default function Borrow() {
       const response = await axios.get(
         `https://borrow-ai.vercel.app/api/reserves/${poolAddress}`
       );
-      function separateKeysAndValues(obj:any) {
+      function separateKeysAndValues(obj: any) {
         const keys = Object.keys(obj);
         const values = Object.values(obj);
 

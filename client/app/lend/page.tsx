@@ -25,8 +25,8 @@ import { getContractInstance } from "../../utils/contracts";
 import { useRouter } from "next/navigation";
 export default function Lend() {
   const { mutate: sendTransaction } = useSendTransaction();
-  const [poolsData, setPoolsData] = useState([]);
-  const [poolsAddresses, setPoolsAddresses] = useState([]);
+  const [poolsData, setPoolsData] = useState<string[]>([]);
+  const [poolsAddresses, setPoolsAddresses] = useState<unknown[]>([]);
   const account = useActiveAccount();
   console.log(account, "account");
   const router = useRouter();
@@ -60,13 +60,12 @@ export default function Lend() {
       const response = await axios.get(
         `https://borrow-ai.vercel.app/api/reserves/${poolAddress}`
       );
-      function separateKeysAndValues(obj) {
+      function separateKeysAndValues(obj:any) {
         const keys = Object.keys(obj);
         const values = Object.values(obj);
 
         return { keys, values };
       }
-
       const { keys, values } = separateKeysAndValues(response?.data);
       setPoolsAddresses(values);
       setPoolsData(keys);

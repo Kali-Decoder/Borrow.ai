@@ -73,7 +73,7 @@ function Feed({}: Props) {
     <div className="w-full">
       <Toaster />
       <div className="flex w-full items-center justify-between gap-12 px-4 py-2">
-        <button className="p-3 bg-black text-white text-2xl rounded-lg font-bold uppercase rounded-lg cursor-pointer">
+        <button className="p-3 bg-black text-white text-2xl rounded-lg font-bold uppercase cursor-pointer">
           <a href="/">Launch Borrow.Ai</a>
         </button>
         <div>
