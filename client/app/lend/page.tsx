@@ -21,7 +21,6 @@ import {
   ConnectEmbed,
   useActiveAccount,
 } from "thirdweb/react";
-import { getContractInstance } from "../../utils/contracts";
 import { useRouter } from "next/navigation";
 export default function Lend() {
   const { mutate: sendTransaction } = useSendTransaction();
