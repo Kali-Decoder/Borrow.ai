@@ -38,21 +38,7 @@ export default function Lend() {
     currentStableBorrowRate: "",
     accruedToTreasury: "",
   });
-  const getApprove = async () => {
-    const contract = await getContractInstance(
-      "0x794a61358D6845594F94dc1DB02A252b5b4814aD"
-    );
-    const transaction = await prepareContractCall({
-      contract,
-      method:
-        "function approve(address spender, uint256 amount) returns (bool)",
-      params: [
-        "0xcfa038455b54714821f291814071161c9870B891",
-        "200000000000000000",
-      ],
-    });
-    await sendTransaction(transaction);
-  };
+ 
   useEffect(() => {
     (async () => {
       let id = toast.loading("Fetching Pools...");
