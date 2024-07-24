@@ -1,6 +1,6 @@
 import { client } from "@/app/client";
 import { getContract } from "thirdweb";
-import { sepolia, arbitrum, avalanche,fuji } from "thirdweb/chains";
+import { sepolia, arbitrum, avalanche } from "thirdweb/chains";
 
 export const getContractInstance = async (address) => {
   return getContract({
